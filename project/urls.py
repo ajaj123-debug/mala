@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.urls import path
 
-from accounts.views import home, signup_view, login_view, logout_view
+from app.views import home, signup_view, login_view, logout_view
 
 urlpatterns = [
     path('', home, name='home'),
