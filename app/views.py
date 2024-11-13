@@ -1,4 +1,4 @@
-# app/views.py
+# accounts/views.py
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
