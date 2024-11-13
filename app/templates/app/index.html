@@ -1,0 +1,578 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Sunni Noori Jama Masjid</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="static/lib/animate/animate.min.css" rel="stylesheet">
+        <link href="static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="static/css/style.css" rel="stylesheet">
+        <link rel="icon" type="image/jpg" href="{% static 'aha.jpg' %}">
+
+    
+    </head>
+    <body>
+        <!-- Topbar start -->
+        <div class="container-fluid fixed-top">
+            <div class="container topbar d-none d-lg-block">
+                <div class="topbar-inner">
+                </div>
+            </div>
+            <div class="container">
+                <nav class="navbar navbar-light navbar-expand-lg py-3">
+                    <a href="index.html" class="navbar-brand">
+                        <h1 class="mb-0">Masjid <span class="text-primary">Al-Noor</span> </h1>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars text-primary"></span>
+                    </button>
+                    <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
+                        <div class="navbar-nav ms-lg-auto mx-xl-auto">
+                            <a href="#" class="nav-item nav-link active">Home</a>
+                            <a href="{% url 'namaz_times' %}" class="nav-item nav-link">Time-table</a>
+                            <a href="#" class="nav-item nav-link">Activities</a>
+                            <a href="#" class="nav-item nav-link">Events</a>
+                            <a href="{% url 'add_transaction' %}" class="nav-item nav-link">खाता संभाले</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                                <div class="dropdown-menu m-0 rounded-0">
+                                    <a href="" class="dropdown-item">Latest Blog</a>
+                                    <a href="" class="dropdown-item">Our Team</a>
+                                    <a href="" class="dropdown-item">Testimonial</a>
+                                </div>
+                            </div>
+                            <a href="" class="nav-item nav-link">Contact</a>
+                        </div>
+                        <a href="{% url 'loginn' %}" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block">Login</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Topbar End -->
+
+
+        <!-- Hero Start -->
+        <div class="container-fluid hero-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="hero-header-inner animated zoomIn">
+                            <p class="fs-4 text-dark">Sunni Noori Jama Masjid</p>
+                            <h1 class="display-1 mb-5 text-dark">Peace Flows from Faith</h1>
+                            <a href="{% url 'loginn' %}" class="btn btn-primary py-3 px-5">Dashboard</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End --> 
+
+
+        <!-- About Satrt -->
+        <div class="container-fluid about py-5">
+            <div class="container py-5">
+                <div class="row g-5 mb-5">
+                    <div class="col-xl-6">
+                        <div class="row g-4">
+                            <div class="col-6">
+                                <img src="static/img/about-1.jpg" class="img-fluid h-100 wow zoomIn" data-wow-delay="0.1s" alt="">
+                            </div>
+                            <div class="col-6">
+                                <img src="static/img/about-2.jpg" class="img-fluid pb-3 wow zoomIn" data-wow-delay="0.1s" alt="">
+                                <img src="static/img/about-3.jpg" class="img-fluid pt-3 wow zoomIn" data-wow-delay="0.1s" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 wow fadeIn" data-wow-delay="0.5s">
+                        <p class="fs-5 text-uppercase text-primary">About Masjid Al-Noor</p>
+                        <h1 class="display-5 pb-4 m-0">Allah Help Those Who Help Themselves</h1>
+                        <p class="pb-4">Welcome to Masjid Al-Noor, a place of worship and a hub of community service. We strive to inspire and guide people toward a life of faith and righteousness, rooted in the teachings of Islam. Our mosque offers spiritual solace, educational programs, and social services, all aimed at enhancing the well-being of the entire community.</p>
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6">
+                                <div class="ps-3 d-flex align-items-center justify-content-start">
+                                    <span class="bg-primary btn-md-square rounded-circle mt-4 me-2"><i class="fa fa-eye text-dark fa-4x mb-5 pb-2"></i></span>
+                                    <div class="ms-4">
+                                        <h5>Our Vision</h5>
+                                        <p>We envision a spiritually vibrant community where individuals connect with their faith, deepen their knowledge of Islam, and are motivated to make a positive impact. We aim to build a society that stands strong on Islamic values and compassion.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="ps-3 d-flex align-items-center justify-content-start">
+                                    <span class="bg-primary btn-md-square rounded-circle mt-4 me-2"><i class="fa fa-flag text-dark fa-4x mb-5 pb-2"></i></span>
+                                    <div class="ms-4">
+                                        <h5>Our Mission</h5>
+                                        <p>Our mission is to create an inclusive environment that encourages spiritual growth, lifelong learning, and acts of kindness. We are committed to fostering unity, promoting Islamic knowledge, and providing essential support to those in need.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-light p-3 mb-4">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-3">
+                                    <img src="static/img/about-child.jpg" class="img-fluid rounded-circle" alt="">
+                                </div>
+                                <div class="col-6">
+                                    <p class="mb-0">मस्जिद अल-नूर में हमारी तामीर और वसीअ मकासद के लिए फंड इकट्ठा किया जाता है, जिससे इबादत, तालीम और कम्युनिटी की जमाव की सहूलतें फराहम की जा सकें। आपका इमदाद हमारे चैरिटी के मन्सूबों और अहम खिदमात को जारी रखने में मददगार साबित होता है।</p>
+                                </div>
+                                <div class="col-3">
+                                        <h2 class="mb-0 text-primary text-center">₹{{ total_savings }}</h2>
+                                        <h5 class="mb-0 text-center">Raised</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-md-6">
+                                <p class="mb-2"><i class="fa fa-check text-primary me-3"></i>Charity & Donation</p>
+                                <p class="mb-0"><i class="fa fa-check text-primary me-3"></i>Parent Education</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="mb-2"><i class="fa fa-check text-primary me-3"></i>Hadith & Sunnah</p>
+                                <p class="mb-0"><i class="fa fa-check text-primary me-3"></i>Mosque Development</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container text-center bg-primary py-5 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-2">
+                            <i class="fa fa-mosque fa-5x text-white"></i>
+                        </div>
+                        <div class="col-lg-7 text-center text-lg-start">
+                            <h1 class="mb-0">Every Muslim Needs To Realise The Importance Of The "Pillar" Of Islam</h1>
+                        </div>
+                        <div class="col-lg-3">
+                            <a href="" class="btn btn-light py-2 px-4">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        <!-- Activities Start -->
+        <div class="container-fluid activities py-5">
+            <div class="container py-5">
+                <div class="mx-auto text-center mb-5 wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px;">
+                    <p class="fs-5 text-uppercase text-primary">Activities</p>
+                    <h1 class="display-3">Here Are Our Activities</h1>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="activities-item p-4 wow fadeIn" data-wow-delay="0.1s">
+                            <i class="fa fa-mosque fa-4x text-dark"></i>
+                            <div class="ms-4">
+                                <h4>Mosque Development</h4>
+                                <p class="mb-4">Our mosque development projects aim to enhance the facilities, create more learning spaces, and provide better amenities for our congregation. We believe in creating a spiritually uplifting space for worship and gathering.</p>
+                                <a href="" class="btn btn-primary px-3">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="activities-item p-4 wow fadeIn" data-wow-delay="0.3s">
+                            <i class="fa fa-donate fa-4x text-dark"></i>
+                            <div class="ms-4">
+                                <h4>Charity & Donation</h4>
+                                <p class="mb-4">Masjid Al-Noor actively engages in charitable efforts, collecting donations to support the needy, run relief programs, and extend a helping hand to those facing hardship. Together, we aim to make a meaningful difference.</p>
+                                <a href="" class="btn btn-primary px-3">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="activities-item p-4 wow fadeIn" data-wow-delay="0.5s">
+                            <i class="fa fa-quran fa-4x text-dark"></i>
+                            <div class="ms-4">
+                                <h4>Quran Learning</h4>
+                                <p class="mb-4">Our Quran Learning program is designed for individuals of all ages, focusing on authentic recitation, memorization, and understanding of the Quran. We believe in spreading the message of the Quran to inspire hearts and minds.</p>
+                                <a href="" class="btn btn-primary px-3">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="activities-item p-4 wow fadeIn" data-wow-delay="0.1s">
+                            <i class="fa fa-book fa-4x text-dark"></i>
+                            <div class="ms-4">
+                                <h4>Hadith & Sunnah</h4>
+                                <p class="mb-4">Delve into the Hadith and Sunnah with our classes that explore the life and teachings of Prophet Muhammad (PBUH). Learn how to incorporate the wisdom of the Prophet into your daily life and grow closer to Allah.</p>
+                                <a href="" class="btn btn-primary px-3">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="activities-item p-4 wow fadeIn" data-wow-delay="0.3s">
+                            <i class="fa fa-book-open fa-4x text-dark"></i>
+                            <div class="ms-4">
+                                <h4>Parent Education</h4>
+                                <p class="mb-4">Our Parent Education program offers guidance on raising children with strong Islamic values, moral integrity, and a sense of community. We help parents strengthen their families spiritually and emotionally.</p>
+                                <a href="" class="btn btn-primary px-3">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="activities-item p-4 wow fadeIn" data-wow-delay="0.5s">
+                            <i class="fa fa-hands fa-4x text-dark"></i>
+                            <div class="ms-4">
+                                <h4>Help Orphans</h4>
+                                <p class="mb-4">Through our "Help Orphans" initiative, we aim to provide orphans with not just financial support but also emotional care, education, and a nurturing environment. Join us in bringing hope to the lives of these children.</p>
+                                <a href="" class="btn btn-primary px-3">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Activities Start -->
+
+
+        <!-- Events Start -->
+        <div class="container-fluid event py-5">
+            <div class="container py-5">
+                <h1 class="display-3 mb-5 wow fadeIn" data-wow-delay="0.1s">Upcoming <span class="text-primary">Events</span></h1>
+                <div class="row g-4 event-item wow fadeIn" data-wow-delay="0.1s">
+                    <div class="col-3 col-lg-2 pe-0">
+                        <div class="text-center border-bottom border-dark py-3 px-2">
+                            <h6>05 Sept 2025</h6>
+                            <p class="mb-0">Friday</p>
+                        </div>
+                    </div>
+                    <div class="col-9 col-lg-6 border-start border-dark pb-5">
+                        <div class="ms-3">
+                            <h4 class="mb-3">Milad Un Nabi</h4>
+                            <p class="mb-4">मीलादुन्नबी हमारे मीलादुन्नबी इवेंट में शिरकत करें। इस मुबारक मौके पर नबी-ए-करीम (ﷺ) की ज़िन्दगी पर गौर करें, दुआओं में शामिल हों और उनकी अमन और रहमत का पेग़ाम फैलाएं।</p>
+                            <a href="#" class="btn btn-primary px-3">Join Now</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="overflow-hidden mb-5">
+                            <img src="static/img/events-1.jpg" class="img-fluid w-100" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4 event-item wow fadeIn" data-wow-delay="0.3s">
+                    <div class="col-3 col-lg-2 pe-0">
+                        <div class="text-center border-bottom border-dark py-3 px-2">
+                            <h6>31 March 2025</h6>
+                            <p class="mb-0">Monday</p>
+                        </div>
+                    </div>
+                    <div class="col-9 col-lg-6 border-start border-dark pb-5">
+                        <div class="ms-3">
+                            <h4 class="mb-3">Eid Ul Fitr</h4>
+                            <p class="mb-4">ईद-उल-फितर रमज़ान के इख्तिताम पर ईद-उल-फितर का जश्न मनाएं, जो खुशी, शुक्र और इमदाद का दिन है। इस खास दिन का तजर्बा नमाज, कम्युनिटी के साथ मिल कर और खैरात के ज़रिए करें, जो एकता और रहमदिली की अलामत है।</p>
+                            <a href="#" class="btn btn-primary px-3">Join Now</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="overflow-hidden mb-5">
+                            <img src="static/img/events-2.jpg" class="img-fluid w-100" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4 event-item wow fadeIn" data-wow-delay="0.5s">
+                    <div class="col-3 col-lg-2 pe-0">
+                        <div class="text-center border-bottom border-dark py-3 px-2">
+                            <h6>07 June 2025</h6>
+                            <p class="mb-0">Saturday</p>
+                        </div>
+                    </div>
+                    <div class="col-9 col-lg-6 border-start border-dark pb-5">
+                        <div class="ms-3">
+                            <h4 class="mb-3">Eid Ul Azha (Qurbani)</h4>
+                            <p class="mb-4">Eid Ul Azha, the festival of sacrifice, is a reminder of the unwavering faith of Prophet Ibrahim (PBUH). Participate in Qurbani with us, and contribute to the spirit of sharing and caring for those less fortunate.</p>
+                            <a href="#" class="btn btn-primary px-3">Join Now</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="overflow-hidden mb-5">
+                            <img src="static/img/events-3.jpg" class="img-fluid w-100" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Events End -->
+
+
+
+        <!-- Blog Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <h1 class="display-3 mb-5 wow fadeIn" data-wow-delay="0.1s">Latest From <span class="text-primary">Our Blog</span></h1>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="blog-item wow fadeIn" data-wow-delay="0.1s">
+                            <div class="blog-img position-relative overflow-hidden">
+                                <img src="static/img/blog-1.jpg" class="img-fluid w-100" alt="">
+                                <div class="bg-primary d-inline px-3 py-2 text-center text-white position-absolute top-0 end-0">29 Sep 2024</div>
+                            </div>
+                            <div class="p-4">
+                                <div class="blog-meta d-flex justify-content-between pb-2">
+                                    <div class="">
+                                        <small><i class="fas fa-user me-2 text-muted"></i><a href="https://www.instagram.com/ajaj_x_ajaj?igsh=MXhxcnIzd3BvbHo4Mg==" class="text-muted me-2">By Admin</small></a>
+                                        <small><i class="fa fa-comment-alt me-2 text-muted"></i><a href="" class="text-muted me-2">12 Comments</small></a>
+                                    </div>
+                                    <div class="">
+                                        <a href=""><i class="fas fa-bookmark text-muted"></i></a>
+                                    </div>
+                                </div>
+                                <a href="" class="d-inline-block h4 lh-sm mb-3">Importance of “Piller” of Islam</a>
+                                <p class="mb-4">The Five Pillars of Islam are the foundation of a Muslim’s faith and practice. Learn about their significance in achieving spiritual fulfillment and maintaining a balanced life in accordance with Islamic teachings.</p>
+                                <a href="https://www.quranreading.com/blog/importance-of-five-pillars-of-islam-with-benefits/" class="btn btn-primary px-3">More Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="blog-item wow fadeIn" data-wow-delay="0.3s">
+                            <div class="blog-img position-relative overflow-hidden">
+                                <img src="static/img/blog-2.jpg" class="img-fluid w-100" alt="">
+                                <div class="bg-primary d-inline px-3 py-2 text-center text-white position-absolute top-0 end-0">01 Oct 2024</div>
+                            </div>
+                            <div class="p-4">
+                                <div class="blog-meta d-flex justify-content-between pb-2">
+                                    <div class="">
+                                        <small><i class="fas fa-user me-2 text-muted"></i><a href="" class="text-muted me-2">By Admin</small></a>
+                                        <small><i class="fa fa-comment-alt me-2 text-muted"></i><a href="" class="text-muted me-2">12 Comments</small></a>
+                                    </div>
+                                    <div class="">
+                                        <a href=""><i class="fas fa-bookmark text-muted"></i></a>
+                                    </div>
+                                </div>
+                                <a href="" class="d-inline-block h4 lh-sm mb-3">How to get closer to Allah</a>
+                                <p class="mb-4">In this series, explore practical steps and guidance on how to strengthen your connection with Allah. From understanding His attributes to engaging in acts of worship, discover ways to achieve spiritual growth and inner peace.</p>
+                                <a href="https://salehaart.com/blogs/rebuild-your-faith/7-things-that-make-allah-happy" class="btn btn-primary px-3">More Details</a>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="col-lg-6 col-xl-4">
+                        <div class="blog-item wow fadeIn" data-wow-delay="0.5s">
+                            <div class="blog-img position-relative overflow-hidden">
+                                <img src="static/img/blog-3.jpg" class="img-fluid w-100" alt="">
+                                <div class="bg-primary d-inline px-3 py-2 text-center text-white position-absolute top-0 end-0">01 Jan 2025</div>
+                            </div>
+                            <div class="p-4">
+                                <div class="blog-meta d-flex justify-content-between pb-2">
+                                    <div class="">
+                                        <small><i class="fas fa-user me-2 text-muted"></i><a href="" class="text-muted me-2">By Admin</small></a>
+                                        <small><i class="fa fa-comment-alt me-2 text-muted"></i><a href="" class="text-muted me-2">12 Comments</small></a>
+                                    </div>
+                                    <div class="">
+                                        <a href=""><i class="fas fa-bookmark text-muted"></i></a>
+                                    </div>
+                                </div>
+                                <a href="" class="d-inline-block h4 lh-sm mb-3">Importance of Hajj in Islam</a>
+                                <p class="mb-4">Hajj, the sacred pilgrimage to Mecca, is one of the most profound experiences in a Muslim’s life. Learn about its significance, the spiritual journey it entails, and the values it instills in a believer’s heart.</p>
+                                <a href="https://www.quranexplorer.com/blog/events/The_Significance_of_Hajj_in_Islam" class="btn btn-primary px-3">More Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+
+
+        <!-- Team Start -->
+        <div class="container-fluid team py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto mb-5 wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px;">
+                    <p class="fs-5 text-uppercase text-primary">Our Team</p>
+                    <h1 class="display-3">Meet Our Dedicated Leader</h1>
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-4 col-xl-5">
+                        <div class="team-img wow zoomIn" data-wow-delay="0.1s">
+                            <img src="static/img/team-1.jpg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-xl-7">
+                        <div class="team-item wow fadeIn" data-wow-delay="0.1s">
+                            <h1>Mohammad Faiyaz</h1>
+                            <h5 class="fw-normal fst-italic text-primary mb-4">Imaam</h5>
+                            <p class="mb-4">इमाम मोहम्मद फ़ैय्याज़ मस्जिद अल-नूर के मोहतरम रूहानी रहनुमा हैं। इस्लामी तालीमात में गहरी जानकारी और खिदमत-ए-खल्क का ज़ज़्बा रखते हुए, वो ईमानदारों की रहनुमाई हिकमत, रहमत और फर्ज़-शनासी के साथ करते हैं। उनकी कोशीशें कम्युनिटी को बेहतर बनाने और उनके इस्लाम से लगाव को मज़बूत करने पर मबनी हैं।</p>
+                            <div class="team-icon d-flex pb-4 mb-4 border-bottom border-primary">
+                                <a class="btn btn-primary btn-lg-square me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-primary btn-lg-square me-2" href=""><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="btn btn-primary btn-lg-square me-2"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="btn btn-primary btn-lg-square"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="team-item wow zoomIn" data-wow-delay="0.2s">
+                                    <img src="static/img/team-2.jpg" class="img-fluid w-100" alt="">
+                                    <div class="team-content text-dark text-center py-3">
+                                        <div class="team-content-inner">
+                                            <h5 class="mb-0">Raja Ali</h5>
+                                            <p class="text-dark">Secretary</p>
+                                            <div class="team-icon d-flex align-items-center justify-content-center">
+                                                <a class="btn btn-primary btn-sm-square me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                                <a class="btn btn-primary btn-sm-square me-2" href=""><i class="fab fa-twitter"></i></a>
+                                                <a href="#" class="btn btn-primary btn-sm-square me-2"><i class="fab fa-instagram"></i></a>
+                                                <a href="#" class="btn btn-primary btn-sm-square"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="team-item wow zoomIn" data-wow-delay="0.4s">
+                                    <img src="static/img/team-3.jpg" class="img-fluid w-100" alt="">
+                                    <div class="team-content text-dark text-center py-3">
+                                        <div class="team-content-inner">
+                                            <h5 class="mb-0">Ajaj Ali</h5>
+                                            <p class="text-dark">Developer</p>
+                                            <div class="team-icon d-flex align-items-center justify-content-center">
+                                                <a class="btn btn-primary btn-sm-square me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                                <a class="btn btn-primary btn-sm-square me-2" href="https://x.com/technerd_ajaj?t=gfID9UzBK49dazl--mCfmg&s=09"><i class="fab fa-twitter"></i></a>
+                                                <a href="https://www.instagram.com/ajaj_x_ajaj?igsh=MXhxcnIzd3BvbHo4Mg==" class="btn btn-primary btn-sm-square me-2"><i class="fab fa-instagram"></i></a>
+                                                <a href="https://www.linkedin.com/in/ajaj-ali-01208725a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="btn btn-primary btn-sm-square"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="team-item wow zoomIn" data-wow-delay="0.6s">
+                                    <img src="static/img/team-4.jpg" class="img-fluid w-100" alt="">
+                                    <div class="team-content text-dark text-center py-3">
+                                        <div class="team-content-inner">
+                                            <h5 class="mb-0">Sultan Ansari</h5>
+                                            <p class="text-dark">Cashier</p>
+                                            <div class="team-icon d-flex align-items-center justify-content-center">
+                                                <a class="btn btn-primary btn-sm-square me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                                <a class="btn btn-primary btn-sm-square me-2" href=""><i class="fab fa-twitter"></i></a>
+                                                <a href="#" class="btn btn-primary btn-sm-square me-2"><i class="fab fa-instagram"></i></a>
+                                                <a href="#" class="btn btn-primary btn-sm-square"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Team End -->
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer pt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-4 footer-inner">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item mt-5">
+                            <h4 class="text-light mb-4">Masjid  <span class="text-primary">Al-Noor</span></h4>
+                            <p class="mb-4 text-secondary">Masjid Al-Noor is more than just a place of worship; it’s a cornerstone of the community. We aim to be a source of hope, knowledge, and unity for all. Whether it’s through educational programs, spiritual gatherings, or charity drives, we are dedicated to making a positive impact. Join us in our mission.</p>
+                            <a href="" class="btn btn-primary py-2 px-4">Donate Now</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item mt-5">
+                            <h4 class="text-light mb-4">Sunni Noori Jama Masjid</h4>
+                            <div class="d-flex flex-column">
+                                <h6 class="text-secondary mb-0">Address</h6>
+                                <div class="d-flex align-items-center border-bottom py-4">
+                                    <span class="flex-shrink-0 btn-square bg-primary me-3 p-4"><i class="fa fa-map-marker-alt text-dark"></i></span>
+                                    <a href="" class="text-body">vill+post : Itwa, PS : Garkha, 841202</a>
+                                </div>
+                                <h6 class="text-secondary mt-4 mb-0">Our Mobile</h6>
+                                <div class="d-flex align-items-center py-4">
+                                    <span class="flex-shrink-0 btn-square bg-primary me-3 p-4"><i class="fa fa-phone-alt text-dark"></i></span>
+                                    <a href="" class="text-body">+91 620482 1662</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item mt-5">
+                            <h4 class="text-light mb-4">Explore Link</h4>
+                            <div class="d-flex flex-column align-items-start">
+                                <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>Home</a>
+                                <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>About Us</a>
+                                <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>Our Features</a>
+                                <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>Contact us</a>
+                                <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>Our Blog</a>
+                                <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>Our Events</a>
+                                <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>Donations</a>
+                                <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>Sermons</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item mt-5">
+                            <h4 class="text-light mb-4">Latest Videos</h4>
+                            <div class="d-flex border-bottom border-secondary py-4">
+                                <img src="static/img/blog-mini-1.jpg" class="img-fluid flex-shrink-0" alt="">
+                                <div class="ps-3">
+                                    <p class="mb-0 text-muted">01 Dec 2024</p>
+                                    <a href="https://www.youtube.com/watch?v=l8f-vOBxPSc" class="text-body">Quran Aur Hadees Ki Baatein</a>
+                                </div>
+                            </div>
+                            <div class="d-flex py-4">
+                                <img src="static/img/blog-mini-2.jpg" class="img-fluid flex-shrink-0" alt="">
+                                <div class="ps-3">
+                                    <p class="mb-0 text-muted">04 Nov 2024</p>
+                                    <a href="https://www.youtube.com/watch?v=t5cc-ynEuoQ&pp=ygUYYmFyZWx2aXlhdCBleHBvc2VkIG1pcmph" class="text-body">Barelviyat ki Khubiyan aur kamiyan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container py-4">
+                <div class="border-top border-secondary pb-4"></div>
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Masjid Fund Itwa</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Designed By <a class="border-bottom" href="">Ajaj A Ali</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary border-3 border-light back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="static/lib/wow/wow.min.js"></script>
+        <script src="static/lib/easing/easing.min.js"></script>
+        <script src="static/lib/waypoints/waypoints.min.js"></script>
+        <script src="static/lib/owlcarousel/owl.carousel.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="static/js/main.js"></script>
+    </body>
+
+</html>
