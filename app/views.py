@@ -167,68 +167,49 @@ def add_deduction(request):
 
 
 
-def generate_report(request):
-    format = request.GET.get('format', 'pdf')  # Default to PDF
+# def generate_report(request):
+#     format = request.GET.get('format', 'pdf')  # Default to PDF
     
-    # Get the current time in UTC and convert to local timezone
-    now = timezone.now()
+#     # Get the current time in UTC and convert to local timezone
+#     now = timezone.now()
 
-    # Ensure datetime is timezone-aware before using localtime
-    if timezone.is_naive(now):
-        now = timezone.make_aware(now)
+#     # Ensure datetime is timezone-aware before using localtime
+#     if timezone.is_naive(now):
+#         now = timezone.make_aware(now)
 
-    now = timezone.localtime(now)  # Convert to the local timezone (Asia/Kolkata)
+#     now = timezone.localtime(now)  # Convert to the local timezone (Asia/Kolkata)
 
-    # Get first and last date of the current month
-    first_day_of_month = timezone.localtime(
-        timezone.make_aware(datetime.datetime(now.year, now.month, 1))
-    )
-    last_day_of_month = timezone.localtime(
-        timezone.make_aware(
-            datetime.datetime(now.year, now.month, monthrange(now.year, now.month)[1])
-        )
-    )
-    # Fetch transactions for the current month
-    transactions = Transaction.objects.filter(date__range=[first_day_of_month, now])
+#     # Get first and last date of the current month
+#     first_day_of_month = timezone.localtime(
+#         timezone.make_aware(datetime.datetime(now.year, now.month, 1))
+#     )
+#     last_day_of_month = timezone.localtime(
+#         timezone.make_aware(
+#             datetime.datetime(now.year, now.month, monthrange(now.year, now.month)[1])
+#         )
+#     )
+#     # Fetch transactions for the current month
+#     transactions = Transaction.objects.filter(date__range=[first_day_of_month, now])
 
-    # Calculate total income, expenditure, and savings
-    total_income = transactions.aggregate(total=Sum('amount'))['total'] or 0
-    total_deductions = Deduction.objects.filter(date__range=[first_day_of_month, now]).aggregate(total=Sum('amount'))['total'] or 0
-    total_savings = total_income - total_deductions
+#     # Calculate total income, expenditure, and savings
+#     total_income = transactions.aggregate(total=Sum('amount'))['total'] or 0
+#     total_deductions = Deduction.objects.filter(date__range=[first_day_of_month, now]).aggregate(total=Sum('amount'))['total'] or 0
+#     total_savings = total_income - total_deductions
 
-    # Prepare data for the report
-    context = {
-        'month_name': now.strftime('%B'),
-        'transactions': transactions,
-        'total_income': total_income,
-        'total_deductions': total_deductions,
-        'total_savings': total_savings,
-        'generation_time': now.strftime('%Y-%m-%d %H:%M:%S'),  # Add generation time
-    }
+#     # Prepare data for the report
+#     context = {
+#         'month_name': now.strftime('%B'),
+#         'transactions': transactions,
+#         'total_income': total_income,
+#         'total_deductions': total_deductions,
+#         'total_savings': total_savings,
+#         'generation_time': now.strftime('%Y-%m-%d %H:%M:%S'),  # Add generation time
+#     }
 
-    if format == 'pdf':
-        return generate_pdf_report(context)
-    elif format == 'png':
-        return generate_png_report(context)
-
-
-
-
-
-
-
-
-def generate_pdf_report(context):
-    # Render HTML template
-    template = get_template('report_template.html')  # Use your HTML template for the PDF
-    html = template.render(context)
-
-    # Create PDF using WeasyPrint
-    pdf = HTML(string=html).write_pdf()
-
-    response = HttpResponse(pdf, content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="report_{}.pdf"'.format(context['month_name'])
-    return response
+#     if format == 'pdf':
+#         return generate_pdf_report(context)
+#     elif format == 'png':
+#         return generate_png_report(context)
 
 
 
@@ -237,40 +218,59 @@ def generate_pdf_report(context):
 
 
 
-def generate_png_report(context):
-    # Create a blank image for PNG (width, height)
-    img = Image.new('RGB', (1000, 1400), color=(255, 255, 255))
-    d = ImageDraw.Draw(img)
+# def generate_pdf_report(context):
+#     # Render HTML template
+#     template = get_template('report_template.html')  # Use your HTML template for the PDF
+#     html = template.render(context)
 
-    # Basic font setup
-    font = ImageFont.truetype("arial.ttf", 20)
+#     # Create PDF using WeasyPrint
+#     pdf = HTML(string=html).write_pdf()
 
-    # Draw report title
-    d.text((10, 10), "Report for " + context['month_name'], fill=(0, 0, 0), font=font)
+#     response = HttpResponse(pdf, content_type='application/pdf')
+#     response['Content-Disposition'] = 'attachment; filename="report_{}.pdf"'.format(context['month_name'])
+#     return response
 
-    # Add serial number, name, and amount columns
-    y_position = 80
-    for idx, transaction in enumerate(context['transactions'], start=1):
-        d.text((8, y_position), f"{idx}. {transaction.user.name}", fill=(0, 0, 0), font=font)
-        d.text((400, y_position), f"₹{transaction.amount}", fill=(0, 0, 0), font=font)
-        y_position += 30
 
-    # Add totals at the bottom
-    y_position += 100
-    d.text((10, y_position), f"Total Income: ₹{context['total_income']}", fill=(0, 0, 0), font=font)
-    y_position += 50
-    d.text((10, y_position), f"Total Deductions: ₹{context['total_deductions']}", fill=(0, 0, 0), font=font)
-    y_position += 50
-    d.text((10, y_position), f"Total Savings: ₹{context['total_savings']}", fill=(0, 0, 0), font=font)
 
-    # Save the image to a byte stream
-    buffer = io.BytesIO()
-    img.save(buffer, format="PNG")
-    buffer.seek(0)
 
-    response = HttpResponse(buffer, content_type="image/png")
-    response['Content-Disposition'] = 'attachment; filename="report_{}.png"'.format(context['month_name'])
-    return response
+
+
+
+
+# def generate_png_report(context):
+#     # Create a blank image for PNG (width, height)
+#     img = Image.new('RGB', (1000, 1400), color=(255, 255, 255))
+#     d = ImageDraw.Draw(img)
+
+#     # Basic font setup
+#     font = ImageFont.truetype("arial.ttf", 20)
+
+#     # Draw report title
+#     d.text((10, 10), "Report for " + context['month_name'], fill=(0, 0, 0), font=font)
+
+#     # Add serial number, name, and amount columns
+#     y_position = 80
+#     for idx, transaction in enumerate(context['transactions'], start=1):
+#         d.text((8, y_position), f"{idx}. {transaction.user.name}", fill=(0, 0, 0), font=font)
+#         d.text((400, y_position), f"₹{transaction.amount}", fill=(0, 0, 0), font=font)
+#         y_position += 30
+
+#     # Add totals at the bottom
+#     y_position += 100
+#     d.text((10, y_position), f"Total Income: ₹{context['total_income']}", fill=(0, 0, 0), font=font)
+#     y_position += 50
+#     d.text((10, y_position), f"Total Deductions: ₹{context['total_deductions']}", fill=(0, 0, 0), font=font)
+#     y_position += 50
+#     d.text((10, y_position), f"Total Savings: ₹{context['total_savings']}", fill=(0, 0, 0), font=font)
+
+#     # Save the image to a byte stream
+#     buffer = io.BytesIO()
+#     img.save(buffer, format="PNG")
+#     buffer.seek(0)
+
+#     response = HttpResponse(buffer, content_type="image/png")
+#     response['Content-Disposition'] = 'attachment; filename="report_{}.png"'.format(context['month_name'])
+#     return response
 
 
 
