@@ -9,7 +9,7 @@ WeasyPrint==54.0
 gunicorn
 whitenoise==6.7.0
 brotli==1.1.0
-dj-database-url==2.3.0
-psycopg2-binary==2.9.10
-django-decouple==2.1
+# dj-database-url==2.3.0
+# psycopg2-binary==2.9.10
+# django-decouple==2.1
 pycparser==2.22
