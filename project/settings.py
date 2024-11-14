@@ -87,13 +87,14 @@ DATABASES = {
         'NAME': 'railway',
         'USER': 'postgres',
         'PASSWORD': 'aLFTHXYluBmCmvFMmImiMsRIMerYeRmJ',
-        'HOST': 'postgres.railway.internal',
-        'PORT': '5432',
+        'HOST': 'autorack.proxy.rlwy.net',  # Use this public hostname
+        'PORT': '53378',  # Use the correct port
         'OPTIONS': {
             'sslmode': 'require',
         },
     }
 }
+
 
 
 import os
