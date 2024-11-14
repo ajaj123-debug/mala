@@ -225,7 +225,7 @@ button:hover {
         </div>
 
         <!-- Generate Report Card -->
-        <div class="card">
+        {% comment %} <div class="card">
             <h2>Generate Report for Current Month</h2>
             <form method="GET" action="{% url 'generate_report' %}">
                 <div class="radio-group">
@@ -237,12 +237,8 @@ button:hover {
                 </div>
                 <button type="submit">Generate Report</button>
             </form>
-        </div>
+        </div> {% endcomment %}
     </div>
     <!-- Footer Section -->
-    <footer>
-        <p>© 2024 Masjid Fund Itwa. All rights reserved.</p>
-        <p>With ❤️ developed by Ajaj Abbas Ali</p>
-    </footer>
 </body>
 </html>
