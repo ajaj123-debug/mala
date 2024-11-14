@@ -6,3 +6,4 @@ whitenoise==6.7.0
 ## kalua ka requiremnts.txt
 # Pillow==9.1.1  # For generating and handling PNG images
 # WeasyPrint==54.0
+dj_database_url>=0.5.0
