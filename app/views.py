@@ -1,5 +1,5 @@
 import io,datetime
-from weasyprint import HTML
+# from weasyprint import HTML
 from calendar import monthrange
 from django.db.models import Sum
 from django.utils import timezone
@@ -7,7 +7,7 @@ from .forms import UserReportForm
 from django.contrib import messages
 from django.http import HttpResponse
 from .models import Transaction, Deduction
-from PIL import Image, ImageDraw, ImageFont
+# from PIL import Image, ImageDraw, ImageFont
 from django.shortcuts import render, redirect
 from django.template.loader import get_template
 from .forms import TransactionForm, DeductionForm
