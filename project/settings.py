@@ -83,13 +83,15 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',  # Make sure this is set
-        'PGDATABASE': 'railway',
-        'PGUSER': 'postgres',
-        'PGPASSWORD': 'aLFTHXYluBmCmvFMmImiMsRIMerYeRmJ',
-        'PGPORT': '5432',  # Default PostgreSQL port
-        'PGHOST': 'postgres.railway.internal',
-        'DATABASE_URL': 'postgresql://postgres:aLFTHXYluBmCmvFMmImiMsRIMerYeRmJ@postgres.railway.internal:5432/railway'
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'aLFTHXYluBmCmvFMmImiMsRIMerYeRmJ',
+        'HOST': 'postgres.railway.internal',
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
     }
 }
 
