@@ -4,8 +4,5 @@ sqlparse==0.5.0
 tzdata==2024.1
 whitenoise==6.7.0
 ## kalua ka requiremnts.txt
-libpango
-mdexport
-libgdk-pixbuf
 Pillow==9.1.1  # For generating and handling PNG images
 WeasyPrint==54.0
