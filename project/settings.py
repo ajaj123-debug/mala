@@ -88,7 +88,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'aLFTHXYluBmCmvFMmImiMsRIMerYeRmJ',
         'HOST': 'autorack.proxy.rlwy.net',  # Use this public hostname
-        'PORT': '5432',  # Use the correct port
+        'PORT': '53378',  # Use the correct port
         'OPTIONS': {
             'sslmode': 'require',
         },
